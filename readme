@@ -1,0 +1,93 @@
+# E-Commerce API
+
+Hello!, Welcome to my e-commerce API. This is a tool that helps you manage products and variants in an online store.
+
+## Quick Start
+
+### What You Need
+
+- [Node.js](https://nodejs.org/): Think of it as the engine that runs our API.
+- [npm](https://www.npmjs.com/): This is like a helper tool that comes with Node.js.
+- [MongoDB](https://www.mongodb.com/): A place to store our data.
+
+### Setting Up
+
+1. **Download the Code:**
+   - Click the green "Code" button and choose "Download ZIP". Extract the ZIP file.
+   - You can also clone the git repo.
+
+2. **Install Dependencies:**
+   - Open a terminal (like Command Prompt on Windows or Terminal on macOS/Linux).
+   - Navigate to the folder where you extracted the code.
+   - Type `npm install` and press Enter. This will install some helpful tools for our project.
+
+3. **Start the Server:**
+   - Type `npm start` and press Enter. Your API is now running on http://localhost:3005.
+                                       or
+   - Type `nodemon start` and press Enter. Your API is now running on http://localhost:3005.
+
+## How to Use the API
+
+### For Create a Product
+
+- **Endpoint:** `POST  http://localhost:3005/products`
+- **What it does:** Adds a new product to our store.
+- **Example Request:**
+
+{
+    "name": "Product1", 
+    "description": "Description1", 
+    "price": 20.99, 
+    "variants": [{
+        "name": "Variant1",
+        "sku": "SKU1",
+        "additionalCost": 5,
+        "stockCount": 10
+        }]
+}
+
+
+### For Read a Product
+
+- **Endpoint:** `Get  http://localhost:3005/products/:id`
+- **What it does:** read a product from the store.
+- **Example Request:**
+
+http://localhost:3005/products/enter your productId
+
+
+### For Update a Product
+
+- **Endpoint:** `PUT  http://localhost:3005/products/:id`
+- **What it does:** Update a product of our store.
+- **Example Request:**
+
+{
+    "name": "updateData1", 
+    "description": "updateDescription1", 
+    "price": 120.99, 
+    "variants": [{
+        "name": "updateVariant1",
+        "sku": "updateSKU1",
+        "additionalCost": 15,
+        "stockCount": 110
+        }]
+}
+
+
+### For Delete a Product
+
+- **Endpoint:** `Delete  http://localhost:3005/deleteProduct/:id`
+- **What it does:** Delete a product from the store.
+- **Example Request:**
+
+http://localhost:3005/deleteProduct/enter your productId
+
+
+### For Search a Product
+
+- **Endpoint:** `Get  http://localhost:3005/searchProduct?query=`
+- **What it does:** Search a product from the store.
+- **Example Request:**
+
+http://localhost:3005/searchProduct?query=enter your query for search (productName, description, varientName)
